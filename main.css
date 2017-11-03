@@ -1,0 +1,560 @@
+html {
+    font-size: 20px;
+}
+body {
+    background: #fff;
+}
+.canvas {
+    position: relative;
+    width: 40rem;
+    height: 30rem;
+    margin: auto;
+    border: 1px dotted #000;
+    overflow: hidden;
+    background: #009ec3;
+    background: -moz-linear-gradient(top, #009ec3 1%, #00b7ea 99%);
+    background: -webkit-linear-gradient(top, #009ec3 1%,#00b7ea 99%);
+    background: linear-gradient(to bottom, #009ec3 1%,#00b7ea 99%);
+}
+
+/* ======================== */
+/*          B  E  E         */
+/* ======================== */
+
+@keyframes bee-flight {
+    0% {
+        top: 10rem;
+        left: 45rem;
+        transform-origin: 0 8rem;
+        transform: rotate(0deg);
+        opacity: 1;
+
+    }
+    9% {
+        top: 10rem;
+        left: 30rem;
+        transform-origin: 0 10rem;
+        transform: rotate(0deg);
+    }
+    16% {
+        transform-origin: 0 9rem;
+        transform: rotate(-90deg);
+    }
+    23% {
+        transform-origin: 0 8rem;
+        /*transform: rotate(-180deg);*/
+
+    }
+    30% {
+        transform-origin: 0 7rem;
+        /*transform: rotate(-270deg);*/
+    }
+    37% {
+        transform-origin:  0 6rem;
+        transform: rotate(-360deg);
+        top: 10rem;
+        left: 30rem;
+
+    }
+    37.0001% {
+        transform-origin:  0 -5rem;
+    }
+    43% {
+
+        transform-origin:  0 -4rem;
+    }
+    49% {
+        transform: rotate(-180deg);*/
+    }
+    54% {
+        transform: rotate(-90deg);
+        top: 10rem;
+        left: 30rem;
+    }
+    65% {
+        transform: rotate(-65deg);
+        top: 22rem;
+        left: 28.5rem;
+    }
+    72% {
+        transform: rotate(0deg);
+        top: 24rem;
+        left: 27rem;
+    }
+    79% {
+        transform-origin:  0 -4rem;
+        transform: rotate(90deg);
+        top: 22rem;
+        left: 26rem;
+    }
+    88% {
+        top: 8rem;
+        left: 24rem;
+        transform: rotate(125deg);
+    }
+    90% {
+        opacity: 1;
+        top: 15rem;
+        left: 12rem;
+        transform: rotate(125deg);
+    }
+    90.0001% {
+        opacity: 0;
+    }
+    100% {
+        top: 10rem;
+        left: 45rem;
+        transform-origin: 0 8rem;
+        transform: rotate(95deg);
+        opacity: 0;
+    }
+}
+
+@keyframes wing-flap1 {
+    0% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(25deg);
+    }
+}
+@keyframes wing-flap2 {
+    0% {
+        transform: rotate(50deg);
+    }
+    100% {
+        transform: rotate(20deg);
+    }
+}
+
+.bee {
+    position: absolute;
+    animation: bee-flight 10s 0s linear infinite forwards normal;
+}
+.bee-wing1 {
+    position: absolute;
+    top: -1.85rem;
+    left: 0.05rem;
+    transform-origin: bottom;
+    transform: rotate(45deg);
+    width: 1.2rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background: #74cad3;
+    background: -moz-radial-gradient(center, ellipse cover, #74cad3 12%, #74b2b1 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, #74cad3 12%,#74b2b1 100%);
+    background: radial-gradient(ellipse at center, #74cad3 12%,#74b2b1 100%);
+    z-index: 1;
+    animation: wing-flap1 0.1s 0s infinite linear alternate;
+}
+.bee-body {
+    width: 2.25rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: #ffff32;
+    background: -moz-linear-gradient(left, #ffff32 13%, #0f0e01 14%, #0f0e01 28%, #ffff14 29%, #ffff14 42%, #0f0e01 43%, #0f0e01 58%, #ffff14 59%, #ffff14 73%, #0f0e01 74%, #0f0e01 88%, #0f0e01 88%, #ffff14 89%, #ffff14 100%);
+    background: -webkit-linear-gradient(left, #ffff32 13%,#0f0e01 14%,#0f0e01 28%,#ffff14 29%,#ffff14 42%,#0f0e01 43%,#0f0e01 58%,#ffff14 59%,#ffff14 73%,#0f0e01 74%,#0f0e01 88%,#0f0e01 88%,#ffff14 89%,#ffff14 100%);
+    background: linear-gradient(to right, #ffff32 13%,#0f0e01 14%,#0f0e01 28%,#ffff14 29%,#ffff14 42%,#0f0e01 43%,#0f0e01 58%,#ffff14 59%,#ffff14 73%,#0f0e01 74%,#0f0e01 88%,#0f0e01 88%,#ffff14 89%,#ffff14 100%);
+    z-index: 2;
+}
+.bee-body:after {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    transform: rotate(-30deg);
+    position: absolute;
+    top: 0.45rem;
+    left: -0.2rem;
+    border-radius:50%;
+    border: 2px solid transparent;
+    border-bottom: 2px solid #f00;
+}
+
+.bee-wing2 {
+    position: absolute;
+    top: -1.7rem;
+    left: 0.4rem;
+    transform-origin: bottom;
+    transform: rotate(45deg);
+    width: 1.2rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background: #57c6d1;
+    background: -moz-radial-gradient(center, ellipse cover, #57c6d1 12%, #5fafae 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, #57c6d1 12%,#5fafae 100%);
+    background: radial-gradient(ellipse at center, #57c6d1 12%,#5fafae 100%);
+    z-index: 5;
+    animation: wing-flap2 0.1s 0s infinite linear alternate;
+}
+
+.bee-eyes {
+    position: absolute;
+    top: 0.1rem;
+    left: 0rem;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+.bee-eyes:after {
+    content: '';
+    width: 0.1rem;
+    height: 0.1rem;
+    border-radius: 50%;
+    border: 1px solid #000;
+    background-color: #000;
+    position: absolute;
+    top: 0.15rem;
+    left: 0.05rem;
+}
+
+/* ======================== */
+/*        D R A G O N       */
+/* ======================== */
+
+@keyframes dragon-look {
+    0% {
+        transform: rotate(0deg);
+    }
+    9% {
+        transform: rotate(-1deg);
+    }
+    12% {
+        transform: rotate(-6deg);
+    }
+    24% {
+        transform: rotate(9deg);
+    }
+    30% {
+    }
+    37% {
+        transform: rotate(-6deg);
+    }
+    37.0001% {
+    }
+    43% {
+        transform: rotate(-10deg);
+    }
+    49% {
+    }
+    54% {
+        transform: rotate(-12deg);
+    }
+    65% {
+    }
+    72% {
+        transform: rotate(3deg);
+    }
+    79% {
+        transform: rotate(-12deg);
+    }
+    88% {
+        transform: rotate(-40deg);
+    }
+    90% {
+    }
+    100% {
+        transform: rotate(3deg)
+    }
+}
+.dragon {
+    position: relative;
+}
+.dragon-neck {
+    width: 6rem;
+    height: 10rem;
+    background: #027f00;
+    background: -moz-linear-gradient(left, #027f00 0%, #088400 47%, #185100 100%);
+    background: -webkit-linear-gradient(left, #027f00 0%,#088400 47%,#185100 100%);
+    background: linear-gradient(to right, #027f00 0%,#088400 47%,#185100 100%);
+    position:absolute;
+    top: 23rem;
+    left: 4rem;
+}
+.dragon-neck::after {
+    content: '';
+	width: 0;
+	height: 0;
+	border-bottom: 11rem solid #027f00;
+	border-left: 4rem solid transparent;
+    position: absolute;
+    left: -4rem;
+}
+.dragon-head {
+    position: absolute;
+    transform-origin: 6rem 23rem;
+    animation: dragon-look 10s 0s linear infinite forwards normal;
+}
+.dragon-head-front {
+    width: 11rem;
+    height: 3rem;
+    position: absolute;
+    left: 6rem;
+    top: 19.75rem;
+    background: #027f00;
+}
+.dragon-head-front::after {
+    content: '';
+	width: 0;
+	height: 0;
+	border-bottom: 3rem solid #027f00;
+	border-right: 1.5rem solid transparent;
+    position: absolute;
+    left: 11rem;
+}
+.dragon-head-front::before {
+    content: '';
+	width: 0;
+	height: 0;
+	border-bottom: 2rem solid #027f00;
+	border-right: 11rem solid transparent;
+    position: absolute;
+    top: -2rem;
+}
+.dragon-nose {
+    position: absolute;
+    left: 15.6rem;
+    top: 20.1rem;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0.8rem 0.5rem 0.9rem;
+    border-color: transparent transparent #013500 transparent;
+    transform: rotate(30deg);
+}
+.dragon-head-back {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 4rem;
+    top: 19.75rem;
+    background: #027f00;
+}
+.dragon-head-back::after {
+    content: '';
+	width: 0;
+	height: 0;
+	border-bottom: 8rem solid #185100;
+    border-right: 0.75rem solid transparent;
+	border-left: 0.75rem solid transparent;
+    transform: rotate(-50deg);
+    position: absolute;
+    left: -1.5rem;
+    top: -7rem;
+}
+.dragon-head-back::before {
+    content: '';
+	width: 0;
+	height: 0;
+	border-bottom: 5rem solid #027f00;
+	border-left: 2rem solid transparent;
+    position: absolute;
+    top: -2rem;
+    left: 0rem;
+}
+
+.dragon-eye {
+    width: 2rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 18.75rem;
+    left: 8.5rem;
+    transform: rotate(10deg);
+}
+.dragon-eye::before {
+    content: '';
+    width: 0.7rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background-color: #f00;
+    position: absolute;
+    top: 0.05rem;
+    left: 1rem;
+    transform: rotate(10deg);
+}
+.dragon-eye::after     {
+    content: '';
+    width: 0.2rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background-color: #000;
+    position: absolute;
+    top: 0.1rem;
+    left: 1.25rem;
+    transform: rotate(10deg);
+}
+
+/* ==== JAW AND TONGUE ==== */
+
+@keyframes jaw-drop {
+    0%, 86%, 90.5%, 100% {
+        transform: rotate(0deg);
+    }
+    87%, 89% {
+        transform: rotate(7deg);
+    }
+}
+.dragon-jaw {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.75rem 0.5rem 0 7.5rem;
+    border-color: #027f00 transparent transparent transparent;
+    position: absolute;
+    top: 23rem;
+    left: 9.75rem;
+    transform-origin: 0 0;
+    transform: rotate(0deg);
+    animation: jaw-drop 10s 0s linear infinite forwards normal;
+}
+@keyframes tongue-shot {
+    0%, 87%, 89%, 100% {
+        width: 5rem;
+        height: 0.25rem;
+        background-color: #e22;
+    }
+    88% {
+        width: 16rem;
+        height: 0.15rem;
+        background-color: #f63;
+
+    }
+}
+.dragon-tongue {
+    width: 6rem;
+    height: 0.25rem;
+    background-color: #e22;
+    position: absolute;
+    top: -1rem;
+    left: -5rem;
+    transform-origin: 0 0;
+    animation: tongue-shot 10s 0s linear infinite forwards normal;
+
+}
+
+
+/* --------------------------- */
+/*       C L O U D S          */
+/* ------------------------- */
+
+@keyframes clouds1 {
+    0%, {
+        position: absolute;
+        left: -7rem;
+    }
+    100% {
+        left: 40rem;
+    }
+}
+@keyframes clouds2 {
+    0%, {
+        position: absolute;
+        left: -12rem;
+    }
+    100% {
+        left: 46rem;
+    }
+}
+@keyframes jumping {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        left: 42rem;
+        transform: translateY(1rem);
+
+    }
+}
+.cloud1 {
+    width: 3rem;
+    height: 2.3rem;
+    background-color: #eee;
+    position: absolute;
+    top: 3.5rem;
+    left: -6rem;
+    border-radius: 50%;
+    box-shadow:
+        -0.9rem -0.4rem 0 0 #eee,
+        0.8rem -0.9rem 0 0 #eee,
+        -0.7rem 1rem 0 0 #eee,
+        2.4rem -0.3rem 0 0 #eee,
+        2rem 1.1rem 0 0 #eee,
+        0.7rem 1.3rem 0 0 #eee,
+        2.5rem -0.2rem 0 3px #ccc,
+        2.1rem 1.2rem 0 4px #ccc,
+        0.8rem 1.4rem 0 3px #ccc
+        ;
+    animation: clouds1 40s 0s linear infinite forwards normal;
+    animation: jumping 5s 0s linear infinite alternate normal;
+
+}
+.cloud2 {
+    width: 3rem;
+    height: 2.3rem;
+    background-color: #eee;
+    position: absolute;
+    top: 1.9rem;
+    left: -7rem;
+    border-radius: 50%;
+    box-shadow:
+        -0.9rem -0.4rem 0 0 #eee,
+        0.7rem -0.9rem 0 0 #eee,
+        -0.7rem 1.2rem 0 0 #eee,
+        2.4rem -0.6rem 0 0 #eee,
+        2rem 1.3rem 0 0 #eee,
+        0.7rem 1.5rem 0 0 #eee,
+        2.5rem -0.5rem 0 3px #ccc,
+        2.1rem 1.4rem 0 4px #ccc,
+        0.9rem 1.55rem 0 3px #ccc
+        ;
+    animation: clouds2 40s -8s linear infinite forwards normal;
+}
+
+.cloud3 {
+    width: 3rem;
+    height: 2.3rem;
+    background-color: #eee;
+    position: absolute;
+    top: 0.4rem;
+    left: -7rem;
+    border-radius: 50%;
+    box-shadow:
+        -0.9rem -0.4rem 0 0 #eee,
+        0.7rem -0.9rem 0 0 #eee,
+        -0.7rem 1.2rem 0 0 #eee,
+        2.4rem -0.6rem 0 0 #eee,
+        2rem 1.3rem 0 0 #eee,
+        0.7rem 1.5rem 0 0 #eee,
+        2.5rem -0.5rem 0 3px #ccc,
+        2.1rem 1.4rem 0 4px #ccc,
+        0.9rem 1.55rem 0 3px #ccc
+        ;
+    animation:
+        clouds2 40s -19s linear infinite forwards normal,
+        jumping 5s 0s linear infinite alternate normal;
+}
+
+.cloud4 {
+    width: 3rem;
+    height: 2.3rem;
+    background-color: #eee;
+    position: absolute;
+    top: 3rem;
+    left: -7rem;
+    border-radius: 50%;
+    box-shadow:
+        -0.9rem -0.4rem 0 0 #eee,
+        0.7rem -0.9rem 0 0 #eee,
+        -0.7rem 1.2rem 0 0 #eee,
+        2.4rem -0.6rem 0 0 #eee,
+        2rem 1.3rem 0 0 #eee,
+        0.7rem 1.5rem 0 0 #eee,
+        2.5rem -0.5rem 0 3px #ccc,
+        2.1rem 1.4rem 0 4px #ccc,
+        0.9rem 1.55rem 0 3px #ccc
+        ;
+    animation: clouds2 40s -33s linear infinite forwards normal;
+}
